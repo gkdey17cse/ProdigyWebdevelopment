@@ -5,28 +5,130 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="./src/output.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Jacquard+24+Charted&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap"
+        rel="stylesheet">
+    <!-- Owl Carousel -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+        integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+        integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
-<body>
-    <nav class="mx-auto">
-        <div class="flex justify-around items-center px-2 py-1.5">
-            <div class="Logo">
-                <h1>TrendSetters Fashion</h1>
+<body style="font-family: 'Nunito Sans', sans-serif;">
+    <!-- Navigation Secttion -->
+    <nav class="mx-auto bg-gray-200 z-20 sticky" style="top: 0%;">
+        <div class="container mx-auto flex flex-row justify-around items-center px-2 py-1.5">
+            <div class="flex px-2 py-1 gap-1.5 justify-center items-center">
+                <img src="./Images/Logo.png" class="w-12" alt="">
+                <h1 class="text-2xl" style="font-family: 'Dancing Script', cursive;">TrendSetters Fashion</h1>
             </div>
-            <div class="flex justify-between items-center gap-6">
-                <a href="#">Home</a>
-                <a href="#">About Us</a>
-                <a href="#">Shop</a>
-                <a href="#">Product Details</a>
-                <a href="#">Blog</a>
-                <a href="#">Contact Us</a>
+            <div class="hidden lg:flex justify-between items-center gap-6">
+                <a href="#" class="font-medium leading-relaxed hover:font-bold duration-300">Home</a>
+                <a href="#" class="font-medium leading-relaxed hover:font-bold duration-300">About Us</a>
+                <a href="#" class="font-medium leading-relaxed hover:font-bold duration-300">Shop</a>
+                <a href="#" class="font-medium leading-relaxed hover:font-bold duration-300">Product Details</a>
+                <a href="#" class="font-medium leading-relaxed hover:font-bold duration-300">Blog</a>
+                <a href="#" class="font-medium leading-relaxed hover:font-bold duration-300">Testimonials</a>
+                <a href="#" class="font-medium leading-relaxed hover:font-bold duration-300">Contact Us</a>
             </div>
-            <div class="">
-                <button class="px-3 py-1.5 bg-gradient-to-r from-teal-600 to-teal-600 text-white">
+            <div class="hidden lg:block">
+                <button
+                    class="w-full px-5 shadow-md rounded-md py-1.5 border border-teal-500 bg-white text-black flex justify-center items-center gap-2">
+                    <img src="./Images/Profile.png" alt="" class="w-8">
                     Login</button>
             </div>
+            <button onclick="openBars();" class="w-10 lg:hidden bg-transparent px-2 py-0.5 border-2">
+                <img src="./Images/Bars.png" alt="">
+                <div id="navList"
+                    class="-ml-16 fixed z-10 hidden lg:flex flex-col justify-start shadow-md bg-white px-2 py-2 divide-y-2 text-sm font-medium leading-relaxed ">
+                    <a href="#" class="hover:font-bold duration-300 px-2 py-1">Home</a>
+                    <a href="#" class="hover:font-bold duration-300 px-2 py-1">About Us</a>
+                    <a href="#" class="hover:font-bold duration-300 px-2 py-1">Shop</a>
+                    <a href="#" class="hover:font-bold duration-300 px-2 py-1">Product Details</a>
+                    <a href="#" class="hover:font-bold duration-300 px-2 py-1">Blog</a>
+                    <a href="#" class="hover:font-bold duration-300 px-2 py-1">Testimonials</a>
+                    <a href="#" class="hover:font-bold duration-300 px-2 py-1">Contact
+                        Us</a>
+                </div>
+            </button>
         </div>
     </nav>
+    <!-- Navigation Secttion -->
+
+    <!-- Hero Section -->
+    <div class="container mx-auto lg:grid grid-cols-3 px-1 mt-4">
+        <div class="owl-carousel col-span-2 flex justify-center items-center px-4">
+            <div><img src="./Images/Caraousel_1.jpg" alt="" class=""></div>
+            <div><img src="./Images/Caraousel_2.jpg" alt="" class=""></div>
+            <div><img src="./Images/Caraousel_3.jpg" alt="" class=""></div>
+            <div><img src="./Images/Caraousel_4.jpg" alt="" class=""></div>
+        </div>
+        <div
+            class="px-8 flex flex-col justify-center items-center gap-2 lg:px-4 lg:py-4 bg-gradient-to-b from-slate-700 to-slate-800 via-gray-900 text-white">
+            <h1 class="text-xl lg:text-4xl leading-loose text-center ">Welcome to
+                <span style="font-family: 'Dancing Script', cursive;"
+                    class="text-4xl font-bold leading-loose bg-gradient-to-r from-yellow-200 via-green-500 to-indigo-200 inline-block text-transparent bg-clip-text">TrendSetters
+                    Fashion</span>
+            </h1>
+            <p class="text-sm lg:text-xl font-medium lg:font-semibold leading-relaxed px-2 py-1 text-justify">Discover
+                the epitome of style with
+                TrendSetters Fashion. Our curated collections bring you the latest
+                trends, from chic everyday wear to stunning statement pieces. Elevate your wardrobe with our premium
+                quality, uniquely designed apparel that reflects your individuality and confidence. Shop now and step
+                into the world of TrendSetters, where fashion meets passion.</p>
+            </button>
+            <div class="py-4 w-full">
+                <button
+                    class="w-full inline-flex items-center justify-center p-0.5 me-2 overflow-hidden lg:text-xl uppercase shadow-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-green-400 to-blue-600 group-hover:from-green-400 group-hover:to-blue-600 hover:text-white focus:ring-4 focus:outline-none focus:ring-green-200">
+                    <span
+                        class="w-full px-5 py-2.5 transition-all ease-in duration-75 bg-white rounded-md group-hover:bg-opacity-0">
+                        Shop Now
+                    </span>
+                </button>
+            </div>
+            <h4 style="font-family: 'Dancing Script', cursive;" class="text-lg lg:text-2xl font-bold pb-4">Discover the
+                Latest Trends
+                and Styles</h4>
+        </div>
+    </div>
+    <!-- Hero Section -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.js"></script>
+    <script>
+        var owl = $('.owl-carousel');
+        owl.owlCarousel({
+            items: 1,
+            loop: true,
+            margin: 20,
+            autoplay: true,
+            autoplayTimeout: 2500,
+            autoplayHoverPause: true,
+            animateOut: 'fadeOut'
+        });
+
+    </script>
+    <script>
+        // function openBars () to open and close three bars
+        function openBars() {
+            var list = document.getElementById('navList');
+            if (list.style.display === 'flex') {
+                list.style.display = 'none';
+            } else {
+                list.style.display = 'flex';
+            }
+        }
+    </script>
 </body>
 
 </html>
