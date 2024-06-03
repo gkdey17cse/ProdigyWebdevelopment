@@ -20,8 +20,28 @@ TrendSetters Fashion is a visually appealing and user-friendly landing page desi
 - **Modern UI/UX:** Utilizes Tailwind CSS for a clean, modern, and consistent design throughout the page.
 - **Interactive Elements:** Enhances user engagement with interactive features such as hover effects and smooth transitions.
 
+# Project 2: Stopwatch Web Application
+
+## Description
+The Prodigy Infotech Stopwatch Application is a simple and intuitive web-based tool designed to measure elapsed time with start, pause, and resume functionalities. This project focuses on providing a user-friendly interface and seamless performance, making it easy for users to track time for various activities. The stopwatch features a clean and modern design, ensuring an engaging user experience.
+
+## Technologies
+- **HTML:** Provides the foundational structure and content for the stopwatch application.
+- **JavaScript:** Powers the core functionality of the stopwatch, including start, pause, and resume operations.
+- **Tailwind CSS:** A utility-first CSS framework used for styling the application, ensuring a responsive and visually appealing design.
+
+## Features
+- **Start Functionality:** Allows users to initiate the stopwatch, starting the measurement of elapsed time.
+- **Pause Functionality:** Enables users to pause the stopwatch, halting the time measurement without resetting it.
+- **Resume Functionality:** Provides the ability to resume the stopwatch from the paused state, continuing the time measurement seamlessly.
+- **Responsive Design:** Ensures the application looks and functions well on various devices, from desktops to mobile phones.
+- **Modern UI/UX:** Utilizes Tailwind CSS for a clean, modern, and consistent design throughout the application.
+
+
 
 ## Setup Instructions
 1. Clone the repository:
    ```bash
    git clone https://github.com/gkdey17cse/ProdigyWebdevelopment.git
+
+
