@@ -53,15 +53,14 @@
                     Us</a>
             </nav>
             <div class="hidden lg:block">
-                <button
-                    class="w-full px-5 shadow-md py-2 border-2 border-teal-500 bg-white text-black flex justify-center items-center gap-2
+                <button class="w-full px-5 shadow-md py-2 border-2 border-teal-500 bg-white text-black flex justify-center items-center gap-2
                     hover:border-2 hover:border-white hover:text-white hover:bg-black duration-200">
                     <img src="./Images/Profile.png" alt="" class="w-8">
                     Login</button>
             </div>
             <button onclick="openBars();" class="w-10 lg:hidden bg-transparent px-2 py-0.5 border-round">
                 <img src="./Images/Bars.png" alt="">
-                <div id="navList"
+                <nav id="navList"
                     class="nav -ml-16 fixed z-10 hidden lg:flex flex-col justify-start shadow-md bg-white text-black px-2 py-2 divide-y-2 text-sm font-medium leading-relaxed ">
                     <a href="#home" class="hover:font-bold hover:bg-cyan-200 duration-300 px-2 py-1">Home</a>
                     <a href="#service" class="hover:font-bold hover:bg-cyan-200 duration-300 px-2 py-1">Service</a>
@@ -77,7 +76,7 @@
                         <img src="./Images/Profile.png" alt="" class="w-8">
                         <p>Login</p>
                     </a>
-                </div>
+                </nav>
             </button>
         </div>
     </div>
@@ -491,16 +490,14 @@
                                 <h3 class="text-sm md:text-base font-medium tracking-wider text-center">Years of <span
                                         class="font-bold">Experience</span></h3>
                             </div>
-                            <div
-                                class="shadow-2xl  gap-4 flex flex-col justify-center items-center border-orange-400">
+                            <div class="shadow-2xl  gap-4 flex flex-col justify-center items-center border-orange-400">
                                 <h2 class="text-transparent bg-clip-text bg-gradient-to-b from-yellow-300 via-yellow-500 to bg-yellow-300
                                     font-bold text-2xl md:text-5xl tracking-wider">67</h2>
                                 <h3 class="text-sm md:text-base font-medium tracking-wider text-center">Experienced
                                     <span class="font-bold">Fashion Designer</span>
                                 </h3>
                             </div>
-                            <div
-                                class="shadow-2xl  gap-4 flex flex-col justify-center items-center border-orange-400">
+                            <div class="shadow-2xl  gap-4 flex flex-col justify-center items-center border-orange-400">
                                 <h2 class="text-transparent bg-clip-text bg-gradient from-yellow-300 via-yellow-500 to bg-yellow-300 
                                     font-bold text-2xl md:text-5xl tracking-wider">15000+</h2>
                                 <h3 class="text-sm md:text-base font-medium tracking-wider text-center">Online <span
@@ -748,6 +745,7 @@
 
     </script>
 
+    <!-- Scrollspy from Footer -->
     <script>
         // Cache selectors
         var lastId,
@@ -779,6 +777,59 @@
         $(window).scroll(function () {
             // Get container scroll position
             var fromTop = $(this).scrollTop() + bottomMenuHeight;
+
+            // Get id of current scroll item
+            var cur = scrollItems.map(function () {
+                if ($(this).offset().top < fromTop)
+                    return this;
+            });
+            // Get the id of the current element
+            cur = cur[cur.length - 1];
+            var id = cur && cur.length ? cur[0].id : "";
+
+            if (lastId !== id) {
+                lastId = id;
+                // Set/remove active class
+                menuItems
+                    .parent().removeClass("font-bold border-yellow-600")
+                    .end().filter("[href='#" + id + "']").parent().addClass("font-bold border-yellow-600");
+            }
+        });
+
+    </script>
+
+    <!-- Scrollspy from Bottom -->
+    <script>
+        // Cache selectors
+        var lastId,
+            navListMenu = $("#navList"),
+            navListMenuHeight = navListMenu.outerHeight() + 40,
+            // All list items
+            menuItems = navListMenu.find("a"),
+            // Anchors corresponding to menu items
+            scrollItems = menuItems.map(function () {
+                var item = $($(this).attr("href"));
+                if (item.length) { return item; }
+            });
+
+        // Bind click handler to menu items
+        // so we can get a fancy scroll animation
+        menuItems.click(function (e) {
+            var href = $(this).attr("href"),
+                offsetTop = href === "#" ? 0 : $(href).offset().top - navListMenuHeight + 1;
+            $('html, body').stop().animate({
+                scrollTop: offsetTop
+            }, 300);
+            if (!helpMenuDiv.classList.contains("hidden")) {
+                helpMenuDiv.classList.add("hidden");
+            }
+            e.preventDefault();
+        });
+
+        // Bind to scroll
+        $(window).scroll(function () {
+            // Get container scroll position
+            var fromTop = $(this).scrollTop() + navListMenuHeight;
 
             // Get id of current scroll item
             var cur = scrollItems.map(function () {
