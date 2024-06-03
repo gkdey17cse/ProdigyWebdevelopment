@@ -3,10 +3,23 @@
 ## Introduction
 Welcome to the GitHub repository for my Web Development internship at Prodigy InfoTech. This repository contains all the code, documentation, and resources for the projects I will be working on during my internship from May 15, 2024, to June 15, 2024.
 
-## Projects
-- Project 1: [Project Name]
-  - Description: Brief description of the project.
-  - Technologies: HTML, CSS, JavaScript, React, Node.js, Express.
+# Project 1: TrendSetters Fashion
+
+## Description
+TrendSetters Fashion is a visually appealing and user-friendly landing page designed to showcase the latest trends in fashion. The project focuses on delivering a seamless and engaging user experience with a modern design aesthetic. The landing page features a dynamic carousel of featured items, responsive design for various screen sizes, and interactive elements to enhance user interaction.
+
+## Technologies
+- **HTML:** Provides the basic structure and content of the landing page.
+- **Tailwind CSS:** A utility-first CSS framework used for styling and layout, ensuring a responsive and consistent design.
+- **JavaScript:** Adds interactivity and functionality to the page, including dynamic content updates.
+- **Owl Carousel:** A jQuery plugin used to create the responsive and customizable carousel for featured items.
+
+## Features
+- **Responsive Design:** Ensures the landing page looks great on all devices, from desktops to mobile phones.
+- **Dynamic Carousel:** Showcases featured fashion items in an interactive, auto-scrolling carousel.
+- **Modern UI/UX:** Utilizes Tailwind CSS for a clean, modern, and consistent design throughout the page.
+- **Interactive Elements:** Enhances user engagement with interactive features such as hover effects and smooth transitions.
+
 
 ## Setup Instructions
 1. Clone the repository:
