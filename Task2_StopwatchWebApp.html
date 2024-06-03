@@ -1,0 +1,134 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Info Aidtech Internship</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./src/output.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Jacquard+24+Charted&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="bg-indigo-900 text-white" style="font-family: 'Nunito Sans', sans-serif;">
+    <div class="container mx-auto h-screen flex flex-col items-center justify-around ">
+        <!-- Heading -->
+        <h2
+            class="text-center text-3xl md:text-4xl xl:text-5xl font-semibold tracking-wider capitalize mt-8 lg:mt-12 px-4 py-2">
+            Stopwatch Web Application
+        </h2>
+        <!-- Heading -->
+        <!-- Tasks List -->
+        <div class="mt-0 max-w-5xl">
+            <section class="flex flex-col justify-center items-center gap-8 px-2 py-4 w-full">
+                <div class="flex justify-center items-center animate-bounce duration-300 pb-4">
+                    <img src="https://cdn.pixabay.com/photo/2021/10/07/05/43/stopwatch-6687414_1280.png" alt=""
+                        class="w-20">
+                </div>
+                <div id=""
+                    class="flex justify-center items-center bg-white py-8 px-16 text-blue-800 text-5xl tracking-wider font-bold">
+                    <p class="timer"> 00 : 00 : 00 : 0000 </p>
+                </div>
+                <div id="buttons"
+                    class="grid grid-cols-3 gap-4 text-lg text-black tracking-wider font-semibold py-4 px-16">
+                    <button id="clock-start"
+                        class="bg-yellow-300 border-yellow-300 active:translate-x-1 active:translate-y-1 px-4 py-1.5 shadow-inner hover:bg-transparent hover:text-white border-2 hover:border-white duration">Start</button>
+                    <button id="clock-pause"
+                        class="bg-teal-300 border-teal-300 active:translate-x-1 active:translate-y-1 px-4 py-1.5 shadow-inner hover:bg-transparent hover:text-white border-2 hover:border-white duration">Pause</button>
+                    <button id="clock-reset"
+                        class="bg-orange-300 border-orange-300 active:translate-x-1 active:translate-y-1 px-4 py-1.5 shadow-inner hover:bg-transparent hover:text-white border-2 hover:border-white duration">Reset</button>
+                </div>
+            </section>
+        </div>
+        <!-- Tasks List End -->
+        <!-- Copyright -->
+        <h2 class="text-center text-md font-medium tracking-widest my-2 px-4 py-4">
+            <p>&copy; Gour Krishna Dey ,
+                <script>document.write(new Date().getFullYear())</script>
+            </p>
+        </h2>
+        <!-- Copyright end-->
+    </div>
+</body>
+
+<script>
+    let [miliseconds, seconds, minitues, hours] = [0, 0, 0, 0];
+    const timeRef = document.querySelector(".timer");
+    let int = null;
+
+    document.getElementById("clock-start").addEventListener("click", () => {
+        if (int !== null) {
+            clearInterval(int);
+        }
+        int = setInterval(displayTimer, 10);
+    });
+    document.getElementById("clock-pause").addEventListener("click", () => {
+
+        clearInterval(int);
+    });
+    document.getElementById("clock-reset").addEventListener("click", () => {
+
+        clearInterval(int);
+        [miliseconds, seconds, minitues, hours] = [0, 0, 0, 0];
+        timeRef.innerHTML = " 00 : 00 : 00 : 000 "
+    });
+
+    function displayTimer() {
+        miliseconds += 10;
+        if (miliseconds == 1000) {
+            miliseconds = 0;
+            seconds++;
+            if (seconds == 60) {
+                seconds = 0;
+                minitues++;
+                if (minitues == 60) {
+                    minitues = 0;
+                    hours++;
+                }
+            }
+        }
+
+        let h; let m; let s; let ms;
+
+        if (hours < 10) {
+            h = "0" + hours;
+        } else {
+            h = hours;
+        }
+
+        if (minitues < 10) {
+            m = "0" + minitues;
+        } else {
+            m = minitues;
+        }
+
+        if (seconds < 10) {
+            s = "0" + seconds;
+        } else {
+            s = seconds;
+        }
+
+        if (miliseconds < 10) {
+            ms = "00" + miliseconds;
+        } else {
+            if (miliseconds < 100) {
+                ms = "0" + miliseconds;
+            } else {
+                ms = miliseconds;
+            }
+        }
+        timeRef.innerHTML = ` ${h} : ${m} : ${s} : ${ms}`;
+
+    }
+
+</script>
+
+</html>
