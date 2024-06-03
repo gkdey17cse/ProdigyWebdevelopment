@@ -11,4 +11,4 @@ Welcome to the GitHub repository for my Web Development internship at Prodigy In
 ## Setup Instructions
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/prodigy-infotech-internship.git
+   git clone https://github.com/gkdey17cse/ProdigyWebdevelopment.git
