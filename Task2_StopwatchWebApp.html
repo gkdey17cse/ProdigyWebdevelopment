@@ -18,7 +18,8 @@
         rel="stylesheet">
 </head>
 
-<body class="bg-gradient-to-r from-indigo-800 to-indigo-900 via-blue-800 text-white" style="font-family: 'Nunito Sans', sans-serif;">
+<body class="bg-gradient-to-r from-indigo-800 to-indigo-900 via-blue-800 text-white"
+    style="font-family: 'Nunito Sans', sans-serif;">
     <div class="container mx-auto h-screen flex flex-col items-center justify-around ">
         <!-- Heading -->
         <h2
@@ -38,13 +39,11 @@
                     <p class="timer"> 00 : 00 : 00 : 000 </p>
                 </div>
                 <div id="buttons"
-                    class="grid grid-cols-3 gap-8 xl:gap-4 text-sm 2xl:text-lg text-black tracking-wider font-semibold py-4 px-16">
+                    class="grid grid-cols-2 gap-8 xl:gap-4 text-sm 2xl:text-lg text-black tracking-wider font-semibold py-4 px-16">
                     <button id="clock-start"
-                        class="bg-yellow-300 border-yellow-300 active:translate-x-1 active:translate-y-1 px-2 xl:px-4 py-1.5 shadow-inner hover:bg-transparent hover:text-white border-2 hover:border-white duration">Start</button>
-                    <button id="clock-pause"
-                        class="bg-teal-300 border-teal-300 active:translate-x-1 active:translate-y-1 px-2 xl:px-4 py-1.5 shadow-inner hover:bg-transparent hover:text-white border-2 hover:border-white duration">Pause</button>
+                        class="bg-yellow-300 border-yellow-300 active:translate-x-1 active:translate-y-1 px-4 py-1.5 shadow-inner hover:bg-transparent hover:text-white border-2 hover:border-white duration-200">Start</button>
                     <button id="clock-reset"
-                        class="bg-orange-300 border-orange-300 active:translate-x-1 active:translate-y-1 px-2 xl:px-4 py-1.5 shadow-inner hover:bg-transparent hover:text-white border-2 hover:border-white duration">Reset</button>
+                        class="bg-teal-300 border-teal-300 active:translate-x-1 active:translate-y-1 px-4 py-1.5 shadow-inner hover:bg-transparent hover:text-white border-2 hover:border-white duration-200">Reset</button>
                 </div>
             </section>
         </div>
@@ -64,16 +63,22 @@
     const timeRef = document.querySelector(".timer");
     let int = null;
 
+    var bool = 0;
     document.getElementById("clock-start").addEventListener("click", () => {
-        if (int !== null) {
+        if (bool == 0) {
+            bool = 1 ;
+            if (int !== null) {
+                clearInterval(int);
+            }
+            int = setInterval(displayTimer, 10);
+            document.getElementById("clock-start").innerHTML = "Pause";
+        }else if (bool==1){
+            bool = 0 ;
             clearInterval(int);
+            document.getElementById("clock-start").innerHTML = "Start";
         }
-        int = setInterval(displayTimer, 10);
     });
-    document.getElementById("clock-pause").addEventListener("click", () => {
 
-        clearInterval(int);
-    });
     document.getElementById("clock-reset").addEventListener("click", () => {
 
         clearInterval(int);
