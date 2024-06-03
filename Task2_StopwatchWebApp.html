@@ -18,7 +18,7 @@
         rel="stylesheet">
 </head>
 
-<body class="bg-indigo-900 text-white" style="font-family: 'Nunito Sans', sans-serif;">
+<body class="bg-gradient-to-r from-indigo-800 to-indigo-900 via-blue-800 text-white" style="font-family: 'Nunito Sans', sans-serif;">
     <div class="container mx-auto h-screen flex flex-col items-center justify-around ">
         <!-- Heading -->
         <h2
@@ -28,23 +28,23 @@
         <!-- Heading -->
         <!-- Tasks List -->
         <div class="mt-0 max-w-5xl">
-            <section class="flex flex-col justify-center items-center gap-8 px-2 py-4 w-full">
+            <section class="flex flex-col justify-center items-center gap-4 2xl:gap-8 px-2 py-4 w-full">
                 <div class="flex justify-center items-center animate-bounce duration-300 pb-4">
                     <img src="https://cdn.pixabay.com/photo/2021/10/07/05/43/stopwatch-6687414_1280.png" alt=""
                         class="w-20">
                 </div>
                 <div id=""
-                    class="flex justify-center items-center bg-white py-8 px-16 text-blue-800 text-5xl tracking-wider font-bold">
-                    <p class="timer"> 00 : 00 : 00 : 0000 </p>
+                    class="flex justify-center items-center bg-white py-8 px-8 2xl:px-16 text-blue-800 text-2xl 2xl:text-5xl tracking-wider font-bold">
+                    <p class="timer"> 00 : 00 : 00 : 000 </p>
                 </div>
                 <div id="buttons"
-                    class="grid grid-cols-3 gap-4 text-lg text-black tracking-wider font-semibold py-4 px-16">
+                    class="grid grid-cols-3 gap-8 xl:gap-4 text-sm 2xl:text-lg text-black tracking-wider font-semibold py-4 px-16">
                     <button id="clock-start"
-                        class="bg-yellow-300 border-yellow-300 active:translate-x-1 active:translate-y-1 px-4 py-1.5 shadow-inner hover:bg-transparent hover:text-white border-2 hover:border-white duration">Start</button>
+                        class="bg-yellow-300 border-yellow-300 active:translate-x-1 active:translate-y-1 px-2 xl:px-4 py-1.5 shadow-inner hover:bg-transparent hover:text-white border-2 hover:border-white duration">Start</button>
                     <button id="clock-pause"
-                        class="bg-teal-300 border-teal-300 active:translate-x-1 active:translate-y-1 px-4 py-1.5 shadow-inner hover:bg-transparent hover:text-white border-2 hover:border-white duration">Pause</button>
+                        class="bg-teal-300 border-teal-300 active:translate-x-1 active:translate-y-1 px-2 xl:px-4 py-1.5 shadow-inner hover:bg-transparent hover:text-white border-2 hover:border-white duration">Pause</button>
                     <button id="clock-reset"
-                        class="bg-orange-300 border-orange-300 active:translate-x-1 active:translate-y-1 px-4 py-1.5 shadow-inner hover:bg-transparent hover:text-white border-2 hover:border-white duration">Reset</button>
+                        class="bg-orange-300 border-orange-300 active:translate-x-1 active:translate-y-1 px-2 xl:px-4 py-1.5 shadow-inner hover:bg-transparent hover:text-white border-2 hover:border-white duration">Reset</button>
                 </div>
             </section>
         </div>
