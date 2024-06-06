@@ -1,0 +1,161 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Info Aidtech Internship</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./src/output.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Jacquard+24+Charted&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="bg-gradient-to-r from-slate-800 to-slate-900 via-slate-800 text-white"
+    style="font-family: 'Nunito Sans', sans-serif;">
+    <audio id="audio" src="../Images/Firecrackersound2.mp3"></audio>
+    <div class="container mx-auto h-screen flex flex-col items-center justify-around ">
+        <div class="flex justify-center items-center gap-2 p-2 flex-col">
+            <!-- Heading -->
+            <h2
+                class="text-center text-3xl md:text-4xl xl:text-5xl font-semibold tracking-wider capitalize mt-8 lg:mt-12 px-4 py-2">
+                Tic Tac Toe
+            </h2>
+            <h3 id="alert" class="pt-8 text-3xl text-teal-300 font-bold">New Game</h3>
+        </div>
+        <!-- Heading -->
+
+
+        <div class="flex justify-between items-center p-2">
+            <div class="flex flex-col justify-center items-center gap-2 xl:gap-8 p-1">
+                <img src="../Images/Fireworks.gif" alt="" class="firecrackers hidden w-auto">
+                <div class="game grid grid-cols-3 gap-2 px-2 text-3xl xl:text-4xl text-black font-bold">
+                    <button class="box p-1 bg-yellow-300 text-center flex justify-center items-center rounded-lg"
+                        style="height: 100px; width: 100px"></button>
+                    <button class="box p-1 bg-yellow-300 text-center flex justify-center items-center rounded-lg"
+                        style="height: 100px; width: 100px"></button>
+                    <button class="box p-1 bg-yellow-300 text-center flex justify-center items-center rounded-lg"
+                        style="height: 100px; width: 100px"></button>
+                    <button class="box p-1 bg-yellow-300 text-center flex justify-center items-center rounded-lg"
+                        style="height: 100px; width: 100px"></button>
+                    <button class="box p-1 bg-yellow-300 text-center flex justify-center items-center rounded-lg"
+                        style="height: 100px; width: 100px"></button>
+                    <button class="box p-1 bg-yellow-300 text-center flex justify-center items-center rounded-lg"
+                        style="height: 100px; width: 100px"></button>
+                    <button class="box p-1 bg-yellow-300 text-center flex justify-center items-center rounded-lg"
+                        style="height: 100px; width: 100px"></button>
+                    <button class="box p-1 bg-yellow-300 text-center flex justify-center items-center rounded-lg"
+                        style="height: 100px; width: 100px"></button>
+                    <button class="box p-1 bg-yellow-300 text-center flex justify-center items-center rounded-lg"
+                        style="height: 100px; width: 100px"></button>
+                </div>
+                <button id="reset-btn"
+                    class="mt-4 w-full px-4 py-2 bg-red-500 border-2 hover:bg-transparent duration-200 active:translate-x-1 active:translate-y-1">Reset</button>
+            </div>
+        </div>
+
+
+        <!-- Copyright -->
+        <h2 class="text-center text-md font-medium tracking-widest my-2 px-4 py-4">
+            <p>&copy; Gour Krishna Dey ,
+                <script>document.write(new Date().getFullYear())</script>
+            </p>
+        </h2>
+        <!-- Copyright end-->
+    </div>
+</body>
+
+
+<script>
+
+    let boxes = document.querySelectorAll(".box");
+    let game = document.querySelector(".game");
+    let firecrackers = document.querySelectorAll(".firecrackers");
+    let resetBtn = document.getElementById("reset-btn");
+    let alert = document.getElementById("alert");
+    let turn = true;
+    let audio = document.getElementById("audio");
+
+    const winPattern = [
+        [0, 1, 2],
+        [3, 4, 5],
+        [6, 7, 8],
+        [0, 3, 6],
+        [1, 4, 7],
+        [2, 5, 8],
+        [0, 4, 8],
+        [2, 4, 6],
+    ]
+
+
+
+    resetBtn.addEventListener("click", () => {
+        alert.classList.remove("text-green-300");
+        alert.innerHTML = "New Game";
+        for (let box of boxes) {
+            box.disabled = false;
+            box.classList.remove("opacity-75");
+            box.innerHTML = "";
+        }
+        for (let firecracker of firecrackers) {
+            firecracker.classList.add("hidden");
+        }
+        audio.currentTime = 0;
+        audio.pause();
+        game.classList.remove("hidden");
+
+    })
+
+    const btnDisabled = () => {
+        for (let box of boxes) {
+            box.disabled = true;
+            box.classList.add("opacity-75");
+        }
+    }
+
+    const checkWinner = () => {
+        for (let pattern of winPattern) {
+            let pos1 = boxes[pattern[0]].innerText;
+            let pos2 = boxes[pattern[1]].innerText;
+            let pos3 = boxes[pattern[2]].innerText;
+            if (pos1 != "" && pos2 != "" && pos3 != "") {
+                if (pos1 == pos2 && pos2 == pos3) {
+                    alert.classList.add("text-green-300");
+                    alert.innerHTML = "Hurrah! Winner is : " + pos1;
+                    btnDisabled();
+                    for (let firecracker of firecrackers) {
+                        firecracker.classList.remove("hidden");
+                    }
+                    audio.play();
+                    game.classList.add("hidden");
+                }
+            }
+        }
+    }
+
+    boxes.forEach((box) => {
+        box.addEventListener("click", () => {
+            // console.log("Box clicked");
+            if (turn == true) {
+                box.innerHTML = "X";
+                turn = false;
+            } else {
+                box.innerHTML = "0";
+                turn = true;
+            }
+            box.disabled = true;
+            checkWinner();
+        });
+    });
+
+
+</script>
+
+</html>

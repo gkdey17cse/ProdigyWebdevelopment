@@ -3,132 +3,191 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Info Aidtech Internship</title>
+    {% load static %}
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="./src/output.css" rel="stylesheet">
+    <title>Interview Instructions - InterviewMitra</title>
+    <link href="/dist/output.css" rel="stylesheet">
+    <link rel="icon" href="{% static 'webpage/Images/iconlogo.png' %}" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts -->
+    {% comment %} Google Fonts {% endcomment %}
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Jacquard+24+Charted&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Jacquard+24+Charted&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap"
-        rel="stylesheet">
+
 </head>
 
-<body class="bg-gradient-to-r from-indigo-800 to-indigo-900 via-blue-800 text-white" style="font-family: 'Nunito Sans', sans-serif;">
-    <div class="container mx-auto h-screen flex flex-col items-center justify-around ">
-        <!-- Heading -->
-        <h2
-            class="text-center text-3xl md:text-4xl xl:text-5xl font-semibold tracking-wider capitalize mt-8 lg:mt-12 px-4 py-2">
-            Stopwatch Web Application
-        </h2>
-        <!-- Heading -->
-        <!-- Tasks List -->
-        <div class="mt-0 max-w-5xl">
-            <section class="flex flex-col justify-center items-center gap-4 2xl:gap-8 px-2 py-4 w-full">
-                <div class="flex justify-center items-center animate-bounce duration-300 pb-4">
-                    <img src="https://cdn.pixabay.com/photo/2021/10/07/05/43/stopwatch-6687414_1280.png" alt=""
-                        class="w-20">
+<!-- bg-gradient-to-l from-blue-200 via-slate-200 to-pink-200 -->
+
+<body class="h-max bg-gray-50" style="font-family: 'Nunito Sans', sans-serif;">
+    <!-- Header cum Navbar -->
+    <div class="w-full bg-white top-0 z-20 shadow-md py-1 bg-blend-screen">
+        <div class="container mx-auto px-4 flex flex-row justify-between items-center">
+            <a href="#" class="lg:w-60">
+                <img src="{% static 'webpage/Images/interviewmitralogo.png' %}" class="animate-pulse" alt=""
+                    width="200px">
+            </a>
+            <div class="hidden my-4 mb-2 lg:flex justify-between items-center flex-wrap gap-4 lg:gap-12">
+                <a id="#" href="/" class="text-xl font-semimbold
+                            text-black hover:font-bold hover:underline underline-offset-8 ">Home</a>
+                </button>
+                <a id="#" href="/logout">
+                    <button type="button" class="shadow-md py-3 px-8 rounded-md transition duration-300 text-lg 
+          font-medium bg-transparent text-gray-800 border-2 border-gray-800 hover:scale-110">LOG OUT</button>
+                </a>
+            </div>
+            <!-- Drop Down Section -->
+            <div class="px-8 py-4 w-1/3 cursor-pointer relative group lg:hidden flex justify-end z-50">
+                <span class="text-black font-extrabold ml-4">
+                    <i class="fa fa-bars" onclick="openMenu()"></i>
+                </span>
+                <div id="hamburgerMenu"
+                    class=" absolute w-auto left-0 top-full shadow-md-py-3 bg-gray-50 divide-y-2 divide-gray-00 hidden group-hover:block shadow-md ">
+                    <div class="flex flex-col">
+                        <a href="/"
+                            class=" px-2 md:px-6 py-2 rounded-md hover:bg-indigo-500 text-gray-800 hover:text-white transition">
+                            <span class="ml-1  text-lg text-end font-normal ">Home</span>
+                        </a>
+                        <a href="/logout"
+                            class="flex items-center  gap-2 px-2 py-2 md:px-6  my-0.5 rounded-md bg-slate-100  hover:bg-indigo-500 text-gray-800 hover:text-white transition">
+                            <button type=" button" class="ml-1  text-lg text-end font-normal">Log Out</button>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                        </a>
+                    </div>
                 </div>
-                <div id=""
-                    class="flex justify-center items-center bg-white py-8 px-8 2xl:px-16 text-blue-800 text-2xl 2xl:text-5xl tracking-wider font-bold">
-                    <p class="timer"> 00 : 00 : 00 : 000 </p>
-                </div>
-                <div id="buttons"
-                    class="grid grid-cols-3 gap-8 xl:gap-4 text-sm 2xl:text-lg text-black tracking-wider font-semibold py-4 px-16">
-                    <button id="clock-start"
-                        class="bg-yellow-300 border-yellow-300 active:translate-x-1 active:translate-y-1 px-2 xl:px-4 py-1.5 shadow-inner hover:bg-transparent hover:text-white border-2 hover:border-white duration">Start</button>
-                    <button id="clock-pause"
-                        class="bg-teal-300 border-teal-300 active:translate-x-1 active:translate-y-1 px-2 xl:px-4 py-1.5 shadow-inner hover:bg-transparent hover:text-white border-2 hover:border-white duration">Pause</button>
-                    <button id="clock-reset"
-                        class="bg-orange-300 border-orange-300 active:translate-x-1 active:translate-y-1 px-2 xl:px-4 py-1.5 shadow-inner hover:bg-transparent hover:text-white border-2 hover:border-white duration">Reset</button>
-                </div>
-            </section>
+            </div>
+            <!-- Drop Down Section End -->
         </div>
-        <!-- Tasks List End -->
-        <!-- Copyright -->
-        <h2 class="text-center text-md font-medium tracking-widest my-2 px-4 py-4">
-            <p>&copy; Gour Krishna Dey ,
-                <script>document.write(new Date().getFullYear())</script>
-            </p>
-        </h2>
-        <!-- Copyright end-->
     </div>
-</body>
+    <!-- Header cum Navbar End -->
 
-<script>
-    let [miliseconds, seconds, minitues, hours] = [0, 0, 0, 0];
-    const timeRef = document.querySelector(".timer");
-    let int = null;
+    <!-- Main Section -->
 
-    document.getElementById("clock-start").addEventListener("click", () => {
-        if (int !== null) {
-            clearInterval(int);
-        }
-        int = setInterval(displayTimer, 10);
-    });
-    document.getElementById("clock-pause").addEventListener("click", () => {
+    <div
+        class="container  h-max mt-4 lg:grid grid-flow-col grid-cols-7 place-items-center place-content-center mx-auto">
 
-        clearInterval(int);
-    });
-    document.getElementById("clock-reset").addEventListener("click", () => {
+        <div class="col-span-3 flex flex-col gap-4 items-center justify-center px-4 mx-4 lg:ml-8 py-4 my-6
+        bg-gradient-to-l from-blue-100 via-slate-100 to-pink-100 rounded-3xl hover:shadow-xl duration-200">
 
-        clearInterval(int);
-        [miliseconds, seconds, minitues, hours] = [0, 0, 0, 0];
-        timeRef.innerHTML = " 00 : 00 : 00 : 000 "
-    });
+            <h2 class="text-3xl text-center font-bold tracking-wide text-gray-700 mt-4">Interview Confirmation</h2>
+            <p class="text-md ">Hello, <span class="font-semibold" name="" id="">{{candidate_name}}</span>
+                You've opted Interview on
+            </p>
+            <span id="" name="">
+                {% if itype == 'skill_based' %}
+                <img class="hover:scale-110 duration-300" src="{% static 'webpage/Images/skills/'%}{{photo_name}}"
+                    alt="" width="100px"></span>
+            {% elif itype == 'job_based' %}
+            <img class="hover:scale-110 duration-300" src="{% static 'webpage/Images/'%}{{photo_name}}" alt=""
+                width="100px"></span>
+            {% else %}
+            <img class="hover:scale-110 duration-300" src="{{photo_name}}" alt="" width="100px"></span>
+            {% endif %}
+            <p id="" name="" class="font-medium text-lg italic text-gray-600">{{mocksubject}}</p>
 
-    function displayTimer() {
-        miliseconds += 10;
-        if (miliseconds == 1000) {
-            miliseconds = 0;
-            seconds++;
-            if (seconds == 60) {
-                seconds = 0;
-                minitues++;
-                if (minitues == 60) {
-                    minitues = 0;
-                    hours++;
+            <div class="mx-4 px-2 mt-4 text-justify">
+                <h3 class="text-lg font-semibold text-gray-700 py-2 pb-4">Please Read the Instructions Carefully : </h3>
+                <div class="flex relative pb-12">
+                    <div class="h-full w-10 absolute inset-0 flex items-center justify-center">
+                        <div class="h-full w-1 bg-indigo-500 pointer-events-none">
+                        </div>
+                    </div>
+                    <div
+                        class="flex-shrink-0 w-10 h-10 rounded-full bg-blue-500 inline-flex items-center justify-center text-white relative z-10">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25m18 0A2.25 2.25 0 0018.75 3H5.25A2.25 2.25 0 003 5.25m18 0V12a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 12V5.25" />
+                        </svg>
+                    </div>
+                    <div class="flex-grow pl-4">
+                        <p class="leading-relaxed text-gray-600 text-md font-medium">Appear in the interview when you
+                            are confident about the domain . As it may have effect on your
+                            <span class="italic">'I-Mitra Score'</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="flex relative pb-12">
+                    <div class="h-full w-10 absolute inset-0 flex items-center justify-center">
+                        <div class="h-full w-1 bg-indigo-500 pointer-events-none"></div>
+                    </div>
+                    <div
+                        class="flex-shrink-0 w-10 h-10 rounded-full bg-blue-500 inline-flex items-center justify-center text-white relative z-10">
+                        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                            stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                            <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"></path>
+                            <circle cx="12" cy="7" r="4"></circle>
+                        </svg>
+                    </div>
+                    <div class="flex-grow pl-4">
+                        <p class="leading-relaxed text-gray-600 text-md font-medium">Don't involve in any kind of
+                            malpractice , your scores will be penalized</p>
+                    </div>
+                </div>
+                <div class="flex relative">
+                    <div
+                        class="flex-shrink-0 w-10 h-10 rounded-full bg-blue-500 inline-flex items-center justify-center text-white relative z-10">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="w-6 h-6">
+                            <path stroke-linecap="round"
+                                d="M15.75 10.5l4.72-4.72a.75.75 0 011.28.53v11.38a.75.75 0 01-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25h-9A2.25 2.25 0 002.25 7.5v9a2.25 2.25 0 002.25 2.25z" />
+                        </svg>
+                    </div>
+                    <div class="flex-grow pl-4">
+                        <p class="leading-relaxed text-gray-600 text-md font-medium">We are monitoring you through out
+                            the examination through your webcam and microphone</p>
+                    </div>
+                </div>
+            </div>
+
+            <form action="" method="POST" class="w-4/5 mx-8 mt-4 px-4 pb-2">
+                {% csrf_token %}
+                <div class="flex justify-center items-center gap-2">
+                    <input id="terms" type="checkbox" value="Checked" name="disclamer"
+                        class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300"
+                        required>
+                    <label for="terms" class="ml-2 text-lg font-medium text-gray-900 dark:text-gray-300">
+                        I've read the instruction carefully
+                    </label>
+                </div>
+                <!-- <p id="msg" class="text-sm text-center text-red-600">Please click the checkbox</p> -->
+                <div class="flex justify-center px-4 gap-8 mt-4">
+                    <a href="/interview"> <button type="button"
+                            class="shadow-md py-1 px-12 rounded-xl transition duration-300 text-lg 
+          font-medium hover:shadow-lg bg-transparent text-gray-800 border-2 border-gray-800 hover:scale-110">Back</button></a>
+
+                    <button type="submit" class="shadow-md py-1 px-12 rounded-xl transition duration-300 text-lg 
+          font-medium hover:shadow-lg bg-purple-600 text-white hover:scale-110">Proceed</button>
+                </div>
+
+            </form>
+
+        </div>
+        <!-- Image SEction -->
+        <div class="hidden lg:grid lg:col-span-4 ml-12 xl:ml-0">
+            <div class="-z-10">
+                <img src="{% static 'webpage/Images/Reading2.gif' %}" alt="Thumbs_up" class="w-full h-auto my-8 ">
+            </div>
+        </div>
+        <!-- Image SEction -->
+
+        <!-- Main Section End-->
+
+        <script>
+            function openMenu() {
+                var x = document.getElementById("hamburgerMenu");
+                if (x.style.display === "block") {
+                    x.style.display = "none";
+                } else {
+                    x.style.display = "block";
                 }
             }
-        }
-
-        let h; let m; let s; let ms;
-
-        if (hours < 10) {
-            h = "0" + hours;
-        } else {
-            h = hours;
-        }
-
-        if (minitues < 10) {
-            m = "0" + minitues;
-        } else {
-            m = minitues;
-        }
-
-        if (seconds < 10) {
-            s = "0" + seconds;
-        } else {
-            s = seconds;
-        }
-
-        if (miliseconds < 10) {
-            ms = "00" + miliseconds;
-        } else {
-            if (miliseconds < 100) {
-                ms = "0" + miliseconds;
-            } else {
-                ms = miliseconds;
-            }
-        }
-        timeRef.innerHTML = ` ${h} : ${m} : ${s} : ${ms}`;
-
-    }
-
-</script>
-
-</html>
+        </script>
+</body>
