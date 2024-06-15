@@ -3,191 +3,169 @@
 
 <head>
     <meta charset="UTF-8">
-    {% load static %}
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interview Instructions - InterviewMitra</title>
-    <link href="/dist/output.css" rel="stylesheet">
-    <link rel="icon" href="{% static 'webpage/Images/iconlogo.png' %}" type="image/x-icon">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
-    {% comment %} Google Fonts {% endcomment %}
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Jacquard+24+Charted&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&family=Roboto&display=swap" rel="stylesheet">
+    <style>
+        .error {
+            color: red;
+            margin-left: 5px;
+            font-family: 'Oswald', sans-serif;
+            font-family: 'Roboto', sans-serif;
+        }
+    </style>
 </head>
 
-<!-- bg-gradient-to-l from-blue-200 via-slate-200 to-pink-200 -->
+<body>
 
-<body class="h-max bg-gray-50" style="font-family: 'Nunito Sans', sans-serif;">
-    <!-- Header cum Navbar -->
-    <div class="w-full bg-white top-0 z-20 shadow-md py-1 bg-blend-screen">
-        <div class="container mx-auto px-4 flex flex-row justify-between items-center">
-            <a href="#" class="lg:w-60">
-                <img src="{% static 'webpage/Images/interviewmitralogo.png' %}" class="animate-pulse" alt=""
-                    width="200px">
-            </a>
-            <div class="hidden my-4 mb-2 lg:flex justify-between items-center flex-wrap gap-4 lg:gap-12">
-                <a id="#" href="/" class="text-xl font-semimbold
-                            text-black hover:font-bold hover:underline underline-offset-8 ">Home</a>
-                </button>
-                <a id="#" href="/logout">
-                    <button type="button" class="shadow-md py-3 px-8 rounded-md transition duration-300 text-lg 
-          font-medium bg-transparent text-gray-800 border-2 border-gray-800 hover:scale-110">LOG OUT</button>
-                </a>
-            </div>
-            <!-- Drop Down Section -->
-            <div class="px-8 py-4 w-1/3 cursor-pointer relative group lg:hidden flex justify-end z-50">
-                <span class="text-black font-extrabold ml-4">
-                    <i class="fa fa-bars" onclick="openMenu()"></i>
-                </span>
-                <div id="hamburgerMenu"
-                    class=" absolute w-auto left-0 top-full shadow-md-py-3 bg-gray-50 divide-y-2 divide-gray-00 hidden group-hover:block shadow-md ">
-                    <div class="flex flex-col">
-                        <a href="/"
-                            class=" px-2 md:px-6 py-2 rounded-md hover:bg-indigo-500 text-gray-800 hover:text-white transition">
-                            <span class="ml-1  text-lg text-end font-normal ">Home</span>
-                        </a>
-                        <a href="/logout"
-                            class="flex items-center  gap-2 px-2 py-2 md:px-6  my-0.5 rounded-md bg-slate-100  hover:bg-indigo-500 text-gray-800 hover:text-white transition">
-                            <button type=" button" class="ml-1  text-lg text-end font-normal">Log Out</button>
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                                stroke="currentColor" class="w-6 h-6">
-                                <path stroke-linecap="round" stroke-linejoin="round"
-                                    d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z" />
-                            </svg>
-                        </a>
+    <div class="container mx-auto">
+        <h1 class="text-center tracking-wider text-5xl font-medium text-gray-800 my-1 py-8
+        text-transparent text-4xl lg:text-8xl bg-clip-text bg-gradient-to-r from-pink-600 to-indigo-900"
+            style="font-family: 'Oswald', sans-serif;">
+            Jquery Form Validation</h1>
+
+        <div class="w-auto lg:grid grid-cols-2 gap-2 px-16 pb-8">
+
+            <div
+                class="flex justify-center items-center px-16 py-2 bg-gradient-to-r from-fuchsia-100 to-teal-100 shadow-sm hover:shadow-lg duration-500 shadow-slate-300 rounded-br-2xl rounded-tl-2xl">
+                <form id="jqueryForm" method="post" class="w-full py-4" style="font-family: 'Oswald', sans-serif; 
+                font-family: 'Roboto', sans-serif;">
+                    <div class="mb-5">
+                        <label for="name" class="block mb-2 font-medium text-lg tracking-wide">Your
+                            Name</label>
+                        <input type="text" id="name" name="name"
+                            class="shadow-sm bg-gray-50 border border-gray-800 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                            placeholder="Eg. : Kevi Robin Peterson">
                     </div>
-                </div>
-            </div>
-            <!-- Drop Down Section End -->
-        </div>
-    </div>
-    <!-- Header cum Navbar End -->
-
-    <!-- Main Section -->
-
-    <div
-        class="container  h-max mt-4 lg:grid grid-flow-col grid-cols-7 place-items-center place-content-center mx-auto">
-
-        <div class="col-span-3 flex flex-col gap-4 items-center justify-center px-4 mx-4 lg:ml-8 py-4 my-6
-        bg-gradient-to-l from-blue-100 via-slate-100 to-pink-100 rounded-3xl hover:shadow-xl duration-200">
-
-            <h2 class="text-3xl text-center font-bold tracking-wide text-gray-700 mt-4">Interview Confirmation</h2>
-            <p class="text-md ">Hello, <span class="font-semibold" name="" id="">{{candidate_name}}</span>
-                You've opted Interview on
-            </p>
-            <span id="" name="">
-                {% if itype == 'skill_based' %}
-                <img class="hover:scale-110 duration-300" src="{% static 'webpage/Images/skills/'%}{{photo_name}}"
-                    alt="" width="100px"></span>
-            {% elif itype == 'job_based' %}
-            <img class="hover:scale-110 duration-300" src="{% static 'webpage/Images/'%}{{photo_name}}" alt=""
-                width="100px"></span>
-            {% else %}
-            <img class="hover:scale-110 duration-300" src="{{photo_name}}" alt="" width="100px"></span>
-            {% endif %}
-            <p id="" name="" class="font-medium text-lg italic text-gray-600">{{mocksubject}}</p>
-
-            <div class="mx-4 px-2 mt-4 text-justify">
-                <h3 class="text-lg font-semibold text-gray-700 py-2 pb-4">Please Read the Instructions Carefully : </h3>
-                <div class="flex relative pb-12">
-                    <div class="h-full w-10 absolute inset-0 flex items-center justify-center">
-                        <div class="h-full w-1 bg-indigo-500 pointer-events-none">
+                    <div class="mb-5">
+                        <label for="email" class="block mb-2 font-medium text-lg tracking-wide">Your
+                            Email</label>
+                        <input type="email" id="email" name="email"
+                            class="shadow-sm bg-gray-50 border border-gray-800 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                            placeholder="name@flowbite.com">
+                    </div>
+                    <div class="mb-5">
+                        <label for="password" class="block mb-2 font-medium text-lg tracking-wide">Your
+                            Password</label>
+                        <input type="password" id="password" name="password" placeholder="Eg: India2047"
+                            class="shadow-sm bg-gray-50 border border-gray-800 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                    </div>
+                    <div class="mb-5">
+                        <label for="repeat-password" class="block mb-2 font-medium text-lg tracking-wide">Repeat
+                            Password</label>
+                        <input type="password" id="repassword" name="repassword" placeholder="India2047"
+                            class="shadow-sm bg-gray-50 border border-gray-800 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                    </div>
+                    <div class="flex items-start mb-5 gap-4">
+                        <label for="terms" class="ml-2 text-md font-medium">I agree
+                            with
+                            the <a href="#" class="text-blue-600 hover:underline dark:text-blue-500">terms and
+                                conditions</a></label>
+                        <div class="flex items-center h-5 ">
+                            <input id="agree" name="agree" type="checkbox">
+                            </input>
                         </div>
                     </div>
-                    <div
-                        class="flex-shrink-0 w-10 h-10 rounded-full bg-blue-500 inline-flex items-center justify-center text-white relative z-10">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                            stroke="currentColor" class="w-6 h-6">
-                            <path stroke-linecap="round" stroke-linejoin="round"
-                                d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25m18 0A2.25 2.25 0 0018.75 3H5.25A2.25 2.25 0 003 5.25m18 0V12a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 12V5.25" />
-                        </svg>
+
+                    <div class="flex items-center justify-center pt-10">
+                        <button type="submit" value="submit" onclick="myFunction()"
+                            class="relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-md 
+                                    font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-cyan-500 to-blue-500 group-hover:from-cyan-500 group-hover:to-blue-500 
+                                    hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-cyan-200 dark:focus:ring-cyan-800">
+                            <span
+                                class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
+                                Create A Free Account
+                            </span>
+                        </button>
                     </div>
-                    <div class="flex-grow pl-4">
-                        <p class="leading-relaxed text-gray-600 text-md font-medium">Appear in the interview when you
-                            are confident about the domain . As it may have effect on your
-                            <span class="italic">'I-Mitra Score'</span>
-                        </p>
-                    </div>
-                </div>
-                <div class="flex relative pb-12">
-                    <div class="h-full w-10 absolute inset-0 flex items-center justify-center">
-                        <div class="h-full w-1 bg-indigo-500 pointer-events-none"></div>
-                    </div>
-                    <div
-                        class="flex-shrink-0 w-10 h-10 rounded-full bg-blue-500 inline-flex items-center justify-center text-white relative z-10">
-                        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                            stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
-                            <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"></path>
-                            <circle cx="12" cy="7" r="4"></circle>
-                        </svg>
-                    </div>
-                    <div class="flex-grow pl-4">
-                        <p class="leading-relaxed text-gray-600 text-md font-medium">Don't involve in any kind of
-                            malpractice , your scores will be penalized</p>
-                    </div>
-                </div>
-                <div class="flex relative">
-                    <div
-                        class="flex-shrink-0 w-10 h-10 rounded-full bg-blue-500 inline-flex items-center justify-center text-white relative z-10">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                            stroke="currentColor" class="w-6 h-6">
-                            <path stroke-linecap="round"
-                                d="M15.75 10.5l4.72-4.72a.75.75 0 011.28.53v11.38a.75.75 0 01-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25h-9A2.25 2.25 0 002.25 7.5v9a2.25 2.25 0 002.25 2.25z" />
-                        </svg>
-                    </div>
-                    <div class="flex-grow pl-4">
-                        <p class="leading-relaxed text-gray-600 text-md font-medium">We are monitoring you through out
-                            the examination through your webcam and microphone</p>
-                    </div>
-                </div>
+                </form>
+
             </div>
+            <div class="flex justify-center items-center hover:scale-105 duration-500 p-12">
+                <img src="/JqueryFormValidation/Validation.jpg" alt="" class="hidden lg:flex justify-center items-center">
 
-            <form action="" method="POST" class="w-4/5 mx-8 mt-4 px-4 pb-2">
-                {% csrf_token %}
-                <div class="flex justify-center items-center gap-2">
-                    <input id="terms" type="checkbox" value="Checked" name="disclamer"
-                        class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300"
-                        required>
-                    <label for="terms" class="ml-2 text-lg font-medium text-gray-900 dark:text-gray-300">
-                        I've read the instruction carefully
-                    </label>
-                </div>
-                <!-- <p id="msg" class="text-sm text-center text-red-600">Please click the checkbox</p> -->
-                <div class="flex justify-center px-4 gap-8 mt-4">
-                    <a href="/interview"> <button type="button"
-                            class="shadow-md py-1 px-12 rounded-xl transition duration-300 text-lg 
-          font-medium hover:shadow-lg bg-transparent text-gray-800 border-2 border-gray-800 hover:scale-110">Back</button></a>
-
-                    <button type="submit" class="shadow-md py-1 px-12 rounded-xl transition duration-300 text-lg 
-          font-medium hover:shadow-lg bg-purple-600 text-white hover:scale-110">Proceed</button>
-                </div>
-
-            </form>
-
-        </div>
-        <!-- Image SEction -->
-        <div class="hidden lg:grid lg:col-span-4 ml-12 xl:ml-0">
-            <div class="-z-10">
-                <img src="{% static 'webpage/Images/Reading2.gif' %}" alt="Thumbs_up" class="w-full h-auto my-8 ">
             </div>
         </div>
-        <!-- Image SEction -->
 
-        <!-- Main Section End-->
+    </div>
 
-        <script>
-            function openMenu() {
-                var x = document.getElementById("hamburgerMenu");
-                if (x.style.display === "block") {
-                    x.style.display = "none";
-                } else {
-                    x.style.display = "block";
-                }
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"
+        integrity="sha512-rstIgDs0xPgmG6RX1Aba4KV5cWJbAMcvRCVmglpam9SoHZiUCyQVDdH2LPlxoHtrv17XWblE/V/PP+Tr04hbtA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script>
+
+        var value = $("#password").val();
+
+        $.validator.addMethod("checklower", function (value) {
+            return /[a-z]/.test(value);
+        });
+        $.validator.addMethod("checkupper", function (value) {
+            return /[A-Z]/.test(value);
+        });
+        $.validator.addMethod("checkdigit", function (value) {
+            return /[0-9]/.test(value);
+        });
+
+
+        jQuery('#jqueryForm').validate({
+
+            rules: {
+                name: "required",
+                email: "required",
+                password: {
+                    required: true,
+                    minlength: 8,
+                    maxlength: 20,
+                    checklower: true,
+                    checkupper: true,
+                    checkdigit: true,
+                },
+                repassword: {
+                    required: true,
+                    equalTo: "#password",
+                    minlength: 8,
+                    maxlength: 20,
+                },
+                agree: "required",
+            },
+
+            messages: {
+                name: "Name is Mandatory",
+                email: {
+                    required: "Email is Mandatory",
+
+                },
+                password: {
+                    required: "Password length must be 8-20 char with 1 lower , 1 uppercase & 1 digit",
+                    minlength: "Password should be 8-20 Characters",
+                    maxlength: "Password should not exceed 20 characters",
+                    checklower: "Need atleast 1 Lowercase Alphabet",
+                    checkupper: "Need atleast 1 Uppercase Alphabet",
+                    checkdigit: "Need atleast 1 digit",
+                },
+                repassword: {
+                    required: "Retype above Password here",
+                    equalTo: "Please enter the same password as above",
+                },
+                agree: "Click the Checkbox",
+            },
+
+
+            submitHandler: function (form) {
+                form.submit();
             }
-        </script>
+
+        });
+
+
+
+    </script>
 </body>
+
+</html>
